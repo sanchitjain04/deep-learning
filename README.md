@@ -14,4 +14,39 @@ Above is an example of semantic segmentation, where the goal is to predict class
 
 ## Various ways to implement instance segmenentation:
 
-1. ### 
+1. ### Mask R-CNN for Surgery Robot:
+
+The codes are based on implementation of Mask R-CNN by [Mask R-CNN](https://github.com/matterport/Mask_RCNN) on Python 3, Keras, and TensorFlow. The model generates bounding boxes and segmentation masks for each instance of an object in the image. It's based on **Feature Pyramid Network (FPN)** and a **ResNet101** backbone. We can Use this on our own requirements by adjusting certain parameters.
+
+* ### Training on our own dataset
+
+  To train the model you need to modify two classes in surgery.py:
+    * SurgeryConfig This class contains the default configurations. Modify the attributes for your training, most importantly the             NUM_CLASSES.
+    * **SurgeryDataset** This class inherits from utils.Dataset which provides capability to train on new dataset without modifying the model.
+    
+    Now start training on your own dataset Training parapeters are mainly included in function train in **surgery.py**.
+    
+    For furthur details follow this [link](https://github.com/SUYEgit/Surgery-Robot-Detection-Segmentation)
+ 2. ### MaterPort Mask R-CNN   
+   This implementation is  Mask R-CNN for object detection and instance segmentation on Keras and TensorFlow.
+   Basically the first case is one of the use cases of this Mask R-CNN implementation.
+  * Basically Mask R-CNN is an instance segmentation technique which locates each pixel of every object in the image instead of the bounding boxes. It has two stages: region proposals and then classifying the proposals and generating bounding boxes and masks. It does so by using an additional fully convolutional network on top of a CNN based feature map with input as feature map and gives matrix with 1 on all locations where the pixel belongs to the object and 0 elsewhere as the output. 
+    
+    
+    ![alt text](https://miro.medium.com/proxy/1*IWWOPIYLqqF9i_gXPmBk3g.png " instance segmentation ")
+    
+    
+    
+    It consists of a backbone network which is a standard CNN such as ResNet50 or ResNet101. The early layer of network detect low-level features, and later layers detect higher-level features. The image is converted from 1024x1024px x 3 (RGB) to a feature map of shape 32x32x2048. The Feature Pyramid Network (FPN) was an extension of the backbone network which can better represent objects at multiple scales.
+    
+     For Code, the Link to its Github repository is [Mask](https://github.com/matterport/Mask_RCNN) 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
