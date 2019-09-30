@@ -11,3 +11,7 @@ First lets discuss what is instance segmentation and how it is different from se
 ![alt text](https://www.jeremyjordan.me/content/images/2018/05/Screen-Shot-2018-05-17-at-7.42.16-PM.png " semantic segmentation ")
 
 Above is an example of semantic segmentation, where the goal is to predict class labels for each pixel in the image.
+
+## Various ways to implement instance segmenentation:
+
+1. ### 
