@@ -39,7 +39,23 @@ The codes are based on implementation of Mask R-CNN by [Mask R-CNN](https://gith
     
     It consists of a backbone network which is a standard CNN such as ResNet50 or ResNet101. The early layer of network detect low-level features, and later layers detect higher-level features. The image is converted from 1024x1024px x 3 (RGB) to a feature map of shape 32x32x2048. The Feature Pyramid Network (FPN) was an extension of the backbone network which can better represent objects at multiple scales.
     
-     For Code, the Link to its Github repository is [Mask](https://github.com/matterport/Mask_RCNN) 
+     As per our requrirement we can modify certain parameters and transform it as per our usage.
+     
+     The Link to its Github repository is [Mask](https://github.com/matterport/Mask_RCNN) 
+     
+3. ### Training DeepLab on Custom Dataset:
+   Although DeepLab is an ideal solution for Semantic Segmentation, But it is useful to know its importance and how we can do custom training on it. Lets know what is this DeepLab:
+   
+   * DeepLab is one of the most promising techniques for semantic image segmentation with Deep Learning. Semantic segmentation is understanding an image at the pixel level, then assigning a label to every pixel in an image such that pixels with the same label share certain characteristics.
+   * #### Preparing Dataset:
+     Before you create your own dataset and train DeepLab, you should be very clear about what you want to want to do with it.   Here are the two scenarios:
+       * Training the model from scratch: you are free to have any number of classes of objects (number of labels) for segmentation. This needs a very long time for training.
+       * Use the pre-trained model: you are free to have any number of classes of objects for segmentation. Use the pre-trained model and only update your classifier weights with transfer learning. This will take far less time for training compared to the prior scenario.
+       
+       For Detailed info : please follow this links :[1](http://hellodfan.com/2018/07/06/DeepLabv3-with-own-dataset)
+                                                     [2](https://www.freecodecamp.org/news/how-to-use-deeplab-in-tensorflow-for-object-segmentation-using-deep-learning-a5777290ab6b)
+     
+     
     
     
     
